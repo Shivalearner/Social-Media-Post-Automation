@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/ai-composer" element={<AIComposer />} />
-          <Route path="/schedule" element={< Scheduler/>} />
+          <Route path="/scheduler" element={< Scheduler/>} />
           
         </Route>
       </Routes>
