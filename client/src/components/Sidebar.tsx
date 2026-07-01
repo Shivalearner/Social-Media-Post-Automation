@@ -43,7 +43,7 @@ const Sidebar = ({
         </div>
       </div>
 
-      {/* Nav section lable */}
+      {/* Nav section label */}
       <div className="px-6 py-2">
         <span className="text-xs text-slate-500 uppercase tracking-wider">
           Menu
