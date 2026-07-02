@@ -126,7 +126,7 @@ const Dashboard = () => {
                 key={activity._id}
                 className="flex items-start gap-4 px-6 py-4 hover:bg-slate-50/50 transition-colors"
               >
-                <div className="size-9 rounded-xl flex items-center justify-center skrink-0">
+                <div className="size-9 rounded-xl flex items-center justify-center shrink-0">
                   <SendIcon className="size-4" />
                 </div>
                 <div className="flex-1 min-w-0">
