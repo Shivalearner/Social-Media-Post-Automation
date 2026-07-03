@@ -39,11 +39,11 @@ const Layout = () => {
               setIsMobileMenuOpen(true);
             }}
           >
-            <MenuIcon size={6} />
+            <MenuIcon size={24} />
           </button>
           <div>
             <h1 className="text-slate-900">
-              {title}
+              {" Post "+title}
               <p className="text-sm text-slate-400 hidden sm:block">
                 Manage and automate your social presence
               </p>
