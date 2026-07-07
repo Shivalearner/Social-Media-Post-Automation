@@ -6,7 +6,7 @@ import { MenuIcon } from "lucide-react";
 const pageTitles: Record<string, string> = {
   "/dashboard": "Dashboard",
   "/accounts": "Social Accounts",
-  "/scheduler": "Scheduler",
+  "/scheduler": "Post Scheduler",
   "/ai-composer": "AI Composer",
 };
 const Layout = () => {
