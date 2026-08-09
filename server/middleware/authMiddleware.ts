@@ -1,6 +1,7 @@
 import { NextFunction, Request } from "express";
 import { Response } from "express";
-
+import * as jwt from "jsonwebtoken";
+import { User } from "../models/User.js";
 export interface AuthRequest extends Request {
   user?: any;
 }
@@ -20,7 +21,7 @@ export const protect = async (
       const decoded: any = jwt.verify(token, process.env.JWT_SECRET!);
       req.user = await User.findById(decoded.id).select("-password");
       next();
-    } catch (error) {
+    } catch (error: any) {
       res
         .status(401)
         .json({ message: error?.message || " Not authorized, token failed" });
