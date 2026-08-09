@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import zernio from "../config/zernio.js";
 import { Account } from "../models/Account.js";
+import { User } from "../models/User.js";
 import { AuthRequest } from "../middleware/authMiddleware.js";
 
 // Helper to enusure user has a Zernio Profile
@@ -42,12 +43,17 @@ const getOrCreateZernioProfile = async (user: any): Promise<string> => {
 export const generateAuthUrl = async (
   req: AuthRequest,
   res: Response,
-): Promise<string> => {
+): Promise<void> => {
   try {
     const { platform } = req.params;
     const profileId = await getOrCreateZernioProfile(req.user);
 
-    const origin = req.header.origin;
+    const origin =
+      req.get("origin") ||
+      (Array.isArray(req.headers.origin)
+        ? req.headers.origin[0]
+        : req.headers.origin) ||
+      "";
     const redirectUrl = `${origin}/accounts`;
 
     const result = await zernio.connect.getConnectUrl({

@@ -1,3 +1,7 @@
+// Temporary module declaration to silence missing types for 'jsonwebtoken'.
+// Ideally install @types/jsonwebtoken, but declaring the module here avoids
+// the compile error when that is not possible.
+
 import { Request, Response } from "express";
 import { User } from "../models/User.js";
 import bcrypt from "bcrypt";
