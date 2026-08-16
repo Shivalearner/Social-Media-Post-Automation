@@ -7,7 +7,7 @@ import { activityLog } from "../models/activityLog.js";
 export const initScheduler = () => {
   cron.schedule("* * * * *  ", async () => {
     try {
-      const now = new Date();
+      const now  = new Date();
       const postsToPublish = await Post.find({
         status: "scheduled",
         scheduledFor: { $lte: now },
