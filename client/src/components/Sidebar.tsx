@@ -6,7 +6,8 @@ import {
   Wand2Icon,
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 // Imports ends here...
 
 const Sidebar = ({
@@ -18,12 +19,7 @@ const Sidebar = ({
 }) => {
   // Component Starts here...
 
-  const { logout, user } = {
-    logout: () => {
-      window.location.href = "/";
-    },
-    user: { name: "Shiva", email: "sivabalan.jobsearch@gmail.com" },
-  };
+  const { logout, user } = useAuth();
   const location = useLocation();
 
   const navItems = [
@@ -38,9 +34,12 @@ const Sidebar = ({
     >
       {/* Logo section */}
       <div className="p-6 pb-4">
-        <div className="text-xl tracking-tight text-slate-800 flex items-center gap-1.5">
+        <Link
+          to="/"
+          className="text-xl tracking-tight text-slate-800 flex items-center gap-1.5 no-underline"
+        >
           <img src={"/logo.svg"} alt="logo" className="size-6" /> Scheduler
-        </div>
+        </Link>
       </div>
 
       {/* Nav section label */}
@@ -87,7 +86,10 @@ const Sidebar = ({
           </div>
         </div>
         <div>
-          <button onClick={logout} className=" mt-1 flex items-center gap-2 px-3 py-2 w-full rounded text-sm text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all duration-150">
+          <button
+            onClick={logout}
+            className=" mt-1 flex items-center gap-2 px-3 py-2 w-full rounded text-sm text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all duration-150"
+          >
             <LogOutIcon className="size-4" /> Sign Out
           </button>
         </div>
