@@ -6,7 +6,6 @@ import {
   CalendarDaysIcon,
   CalendarIcon,
   ClockIcon,
-  Divide,
   SendIcon,
   XIcon,
 } from "lucide-react";
