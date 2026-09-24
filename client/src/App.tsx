@@ -14,6 +14,7 @@ export default function App() {
             <Toaster position="top-right"/>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/homepage" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route element={<Layout />}>
                     <Route path="/dashboard" element={<Dashboard />}/>
